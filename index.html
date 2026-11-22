@@ -1,0 +1,1938 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neha Pawar | Web &amp; WordPress Developer, Pune</title>
+<meta name="description" content="Neha Pawar is a software developer in Pune who builds responsive WordPress and HTML/CSS websites.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  
+:root {
+  --paper: #f4f2ee;
+  --ink: #14121f;
+  --indigo: #4637e8;
+  --sand: #ebe8e1;
+  --lemon: #f2e35c;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+html.lenis { scroll-behavior: auto; }
+
+body {
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  background: var(--ink);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--indigo);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+
+.wrap {
+  width: min(1120px, 100% - 48px);
+  margin: 0 auto;
+}
+.wrap-about {
+  width: min(1120px, 100% - 48px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap:40px;
+}
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: var(--lemon);
+  z-index: 50;
+}
+
+/* NAVIGATION */
+/* NAVIGATION */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background: var(--paper);
+  color: var(--ink);
+  mix-blend-mode: normal;
+  box-shadow: 0 2px 15px rgba(20,18,31,.06);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.brand {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif!important;
+  font-weight: 600;
+}
+
+nav a {
+  text-decoration: none;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: var(--indigo);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .35s var(--ease);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+/* header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.brand {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .35s var(--ease);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+} */
+
+/* PANELS */
+
+.panel {
+  position: relative;
+  padding: 112px 0;
+  border-radius: 40px 40px 0 0;
+  margin-top: -40px;
+}
+
+.panel:first-of-type {
+  margin-top: 0;
+  border-radius: 0;
+}
+
+.hero {
+  background: var(--paper);
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 130px 0 90px;
+}
+
+.p-paper { background: var(--paper); }
+.p-sand { background: var(--sand); }
+
+.p-dark {
+  background: #1d1a33;
+  color: #f4f2ee;
+}
+
+.p-indigo {
+  background: var(--indigo);
+  color: #fff;
+}
+
+h2 {
+  font-size: clamp(40px, 7vw, 92px);
+  font-weight: 800;
+  margin-bottom: 48px;
+  max-width: 14ch;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: .08em;
+}
+
+.line > span {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 1s var(--ease);
+}
+
+.in .line > span { transform: none; }
+
+.line:nth-child(2) > span { transition-delay: .1s; }
+.line:nth-child(3) > span { transition-delay: .2s; }
+
+/* HERO */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(56px, 10.5vw, 85px);
+  font-weight: 800;
+  letter-spacing: -.05em;
+  line-height: .88;
+}
+
+.hero h1 .ch {
+  display: inline-block;
+  transform: translateY(105%) rotate(8deg);
+  opacity: 0;
+  animation: rise .9s var(--ease) forwards;
+  animation-delay: calc(var(--i) * 45ms + .2s);
+}
+
+.hero h1 .wd {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0 .02em .1em;
+  vertical-align: top;
+}
+
+.hero h1 .hl { color: var(--indigo); }
+
+@keyframes rise {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.lede {
+  margin-top: 32px;
+  max-width: 44ch;
+  font-size: 16px;
+  opacity: 0;
+  font-family: 'Poppins', sans-serif !important;
+  animation: fade 1s .9s forwards;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+  opacity: 0;
+  animation: fade 1s 1.1s forwards;
+}
+
+@keyframes fade {
+  to { opacity: 1; }
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 26px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: 2px solid currentColor;
+  transition: background .3s, color .3s, transform .25s var(--ease);
+}
+
+.btn.main {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.btn:hover {
+  background: var(--indigo);
+  color: #fff;
+  border-color: var(--indigo);
+}
+
+.photo {
+  position: relative;
+  justify-self: center;
+  width: min(360px, 100%);
+  opacity: 0;
+  animation: fade 1.2s .5s forwards;
+}
+
+.photo .arch {
+  border-radius: 999px 999px 24px 24px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: #dcd8cc;
+  position: relative;
+  z-index: 1;
+}
+
+.photo img {
+  width: 100%;
+  height: 112%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.photo .dot {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.photo .d1 {
+  width: 120px;
+  height: 120px;
+  background: var(--indigo);
+  right: -34px;
+  top: 40px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.photo .d2 {
+  width: 80px;
+  height: 80px;
+  background: var(--lemon);
+  left: -26px;
+  bottom: 60px;
+  animation: float 5s ease-in-out -2s infinite;
+}
+
+.photo .d3 {
+  width: 46px;
+  height: 46px;
+  background: var(--ink);
+  right: 20px;
+  bottom: -14px;
+  animation: float 7s ease-in-out -1s infinite;
+}
+
+@keyframes float {
+  50% { transform: translateY(-16px); }
+}
+
+/* MARQUEE */
+
+.marq {
+  background: var(--ink);
+  color: var(--paper);
+  overflow: hidden;
+  padding: 22px 0;
+  white-space: nowrap;
+}
+
+.marq div {
+  display: inline-flex;
+  animation: slide 28s linear infinite;
+}
+
+.marq span {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 46px);
+  padding-right: 36px;
+}
+
+.marq span:nth-child(even) { color: var(--lemon); }
+
+@keyframes slide {
+  to { transform: translateX(-50%); }
+}
+
+/* ABOUT */
+
+.about p {
+  max-width: 60ch;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(12px, 2.2vw, 16px);
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+
+/* SKILLS */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.chip {
+  padding: 14px 26px;
+  border-radius: 99px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2.4vw, 28px);
+  transition: transform .4s var(--ease), background .3s, color .3s, border-color .3s;
+  cursor: default;
+}
+
+.chip:hover {
+  transform: translateY(-6px);
+  background: var(--lemon);
+  border-color: var(--lemon);
+  color: var(--ink);
+}
+
+
+
+
+/* EXPERIENCE */
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.job-card {
+  padding: 32px;
+  border: 1px solid rgba(244, 242, 238, .2);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .035);
+  display: flex;
+  flex-direction: column;
+  transition: transform .4s var(--ease),
+              background .4s var(--ease),
+              border-color .4s var(--ease);
+}
+
+.job-card:hover {
+  transform: translateY(-7px);
+  background: rgba(255, 255, 255, .07);
+  border-color: var(--lemon);
+}
+
+.job-label {
+  color: var(--lemon);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.job-card time {
+  font-size: 14px;
+  opacity: .7;
+}
+
+.job-card h3 {
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  margin-top: 14px;
+}
+
+.job-card .co {
+  color: var(--lemon);
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px 0 22px;
+}
+
+.job-card ul {
+  padding-left: 20px;
+}
+
+.job-card li {
+  margin-bottom: 12px;
+  max-width: 60ch;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif !important;
+  line-height: 1.7;
+}
+
+/* EXPERIENCE RESPONSIVE */
+
+@media (max-width: 860px) {
+  .job-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .job-card {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 540px) {
+  .job-card {
+    padding: 23px;
+  }
+
+  .job-card h3 {
+    font-size: 32px;
+  }
+}
+
+/* =========================================
+   SELECTED WORK
+   STICKY STACKED PROJECT SHOWCASE
+   Independent sw- classes
+========================================= */
+
+.sw-section {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 112px 0 130px;
+  position: relative;
+  overflow: clip;
+}
+
+.sw-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 65px;
+}
+
+.sw-heading h2 {
+  font-size: clamp(52px, 8vw, 105px);
+  max-width: none;
+  margin: 0;
+  letter-spacing: -.055em;
+}
+
+.sw-heading-note {
+  max-width: 190px;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: .65;
+  padding-bottom: 8px;
+}
+
+.sw-project-list {
+  position: relative;
+  isolation: isolate;
+}
+
+.sw-project {
+  --sw-accent: #e9e5dc;
+  --sw-text: #14121f;
+
+  position: sticky;
+  top: 95px;
+  z-index: 1;
+
+  min-height: 470px;
+  margin-bottom: 35px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background: var(--sw-accent);
+  color: var(--sw-text);
+
+  border-radius: 26px;
+  overflow: hidden;
+
+  box-shadow: 0 12px 45px rgba(20,18,31,.09);
+
+  transform-origin: top center;
+  transition: box-shadow .5s var(--ease);
+}
+
+.sw-project:last-child {
+  margin-bottom: 0;
+}
+
+.sw-project:hover {
+  box-shadow: 0 22px 60px rgba(20,18,31,.16);
+}
+
+.sw-project[data-index="1"] { z-index: 1; }
+.sw-project[data-index="2"] { z-index: 2; }
+.sw-project[data-index="3"] { z-index: 3; }
+.sw-project[data-index="4"] { z-index: 4; }
+.sw-project[data-index="5"] { z-index: 5; }
+.sw-project[data-index="6"] { z-index: 6; }
+
+/* Project visual */
+
+.sw-visual {
+  position: relative;
+  min-height: 470px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 35px;
+  background: var(--sw-visual-bg, #dedbd2);
+}
+
+.sw-visual img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  transition: transform .8s var(--ease);
+}
+
+.sw-project:hover .sw-visual img {
+  transform: scale(1.045);
+}
+
+.sw-visual-placeholder {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.sw-visual-placeholder span {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(38px, 6vw, 76px);
+  font-weight: 800;
+  letter-spacing: -.07em;
+  line-height: .9;
+  max-width: 8ch;
+  overflow-wrap: anywhere;
+}
+
+.sw-visual-placeholder small {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* Project details */
+
+.sw-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(28px, 4vw, 55px);
+}
+
+.sw-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  opacity: .7;
+}
+
+.sw-number {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 18px;
+}
+
+.sw-info h3 {
+  font-size: clamp(34px, 4.5vw, 62px);
+  line-height: .98;
+  letter-spacing: -.055em;
+  margin: 35px 0 18px;
+  max-width: 11ch;
+}
+
+.sw-description {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 40ch;
+  opacity: .78;
+}
+
+.sw-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.sw-tags span {
+  border: 1px solid currentColor;
+  padding: 7px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sw-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.sw-bottom small {
+  font-size: 12px;
+  opacity: .65;
+}
+
+.sw-link {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 23px;
+  transition: background .3s, color .3s, transform .4s var(--ease);
+}
+
+.sw-link:hover {
+  background: var(--sw-text);
+  color: var(--sw-accent);
+  transform: rotate(45deg);
+}
+
+/* Individual project themes */
+
+.sw-project.sw-p1 {
+  --sw-accent: #e9e5dc;
+  --sw-text: #17151e;
+  --sw-visual-bg: #d4c9b9;
+}
+
+.sw-project.sw-p2 {
+  --sw-accent: #24203d;
+  --sw-text: #fff;
+  --sw-visual-bg: #39315c;
+}
+
+.sw-project.sw-p3 {
+  --sw-accent: #e9e6dc;
+  --sw-text: #17151e;
+  --sw-visual-bg: #c7d0be;
+}
+
+.sw-project.sw-p4 {
+  --sw-accent: #e9d5cb;
+  --sw-text: #17151e;
+  --sw-visual-bg: #d5a99b;
+}
+
+.sw-project.sw-p5 {
+  --sw-accent: #dce4ef;
+  --sw-text: #17151e;
+  --sw-visual-bg: #a8b8d1;
+}
+
+.sw-project.sw-p6 {
+  --sw-accent: #e8e0b9;
+  --sw-text: #17151e;
+  --sw-visual-bg: #c8b96f;
+}
+
+/* RESPONSIVE SELECTED WORK */
+
+@media(max-width: 860px) {
+  .sw-section {
+    padding: 85px 0 100px;
+  }
+
+  .sw-project {
+    top: 85px;
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .sw-visual {
+    min-height: 320px;
+  }
+
+  .sw-visual-placeholder {
+    min-height: 280px;
+  }
+
+  .sw-info {
+    min-height: 330px;
+    padding: 30px;
+  }
+
+  .sw-info h3 {
+    margin-top: 25px;
+  }
+}
+
+@media(max-width: 540px) {
+  .sw-section {
+    padding: 75px 0 85px;
+  }
+
+  .sw-heading {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .sw-heading h2 {
+    font-size: clamp(48px, 14vw, 72px);
+  }
+
+  .sw-heading-note {
+    margin-top: 14px;
+    max-width: 250px;
+  }
+
+  .sw-project {
+    top: 76px;
+    border-radius: 19px;
+    margin-bottom: 20px;
+  }
+
+  .sw-visual {
+    min-height: 245px;
+    padding: 20px;
+  }
+
+  .sw-visual-placeholder {
+    min-height: 205px;
+  }
+
+  .sw-info {
+    padding: 24px;
+    min-height: 350px;
+  }
+
+  .sw-info h3 {
+    font-size: 39px;
+  }
+
+  .sw-description {
+    font-size: 14px;
+  }
+
+  .sw-tags {
+    gap: 6px;
+  }
+
+  .sw-tags span {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .sw-link {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* JOURNEY */
+
+.tl {
+  position: relative;
+  max-width: 780px;
+  padding-left: 44px;
+}
+
+.tl::before,
+.tl .fill {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  width: 3px;
+  background: rgba(20,18,31,.18);
+}
+
+.tl::before { bottom: 8px; }
+
+.tl .fill {
+  height: 0;
+  background: var(--ink);
+}
+
+.tl li {
+  list-style: none;
+  position: relative;
+  padding-bottom: 36px;
+}
+
+.tl li::before {
+  content: "";
+  position: absolute;
+  left: -44px;
+  top: 6px;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: var(--indigo);
+  border: 3px solid var(--ink);
+}
+
+.tl time {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: .75;
+}
+
+.tl strong {
+  display: block;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(24px, 3.4vw, 36px);
+  line-height: 1.1;
+}
+
+.tl span { opacity: .8; }
+
+/* BEYOND */
+
+.hob {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.hobby {
+  padding: 26px;
+  border-radius: 24px;
+  border: 1px solid rgba(244,242,238,.22);
+  color: #f4f2ee;
+  transition: transform .5s var(--ease), background .4s, color .4s, border-color .4s;
+}
+
+.hobby:hover {
+  transform: translateY(-8px);
+  background: var(--lemon);
+  border-color: var(--lemon);
+  color: var(--ink);
+}
+
+.hobby h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hobby p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* CONTACT */
+
+.contact {
+  background: var(--ink);
+  color: var(--paper);
+  padding-bottom: 40px;
+}
+
+.contact h2 {
+  font-size: clamp(52px, 11vw, 170px);
+  max-width: none;
+  letter-spacing: -.05em;
+  line-height: .9;
+}
+
+.contact h2 .o { color: var(--lemon); }
+
+.contact p {
+  max-width: 50ch;
+  font-size: 19px;
+  opacity: .8;
+  margin-bottom: 30px;
+}
+
+.contact .btn.main {
+  background: var(--lemon);
+  color: var(--ink);
+  border-color: var(--lemon);
+}
+
+.contact .btn:hover {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+
+footer {
+  margin-top: 90px;
+  padding-top: 22px;
+  border-top: 1px solid #34304d;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 14px;
+  opacity: .7;
+}
+
+/* REVEAL */
+
+.rv {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease);
+  transition-delay: var(--d, 0s);
+}
+
+.rv.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* CUSTOM CURSOR */
+
+.cur {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 60;
+  transition: width .3s var(--ease), height .3s var(--ease);
+  display: none;
+}
+
+@media(hover:hover) and (pointer:fine) {
+  .cur { display: block; }
+  .cur.big {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* GENERAL RESPONSIVE */
+
+@media(max-width:860px) {
+  nav { display: none; }
+
+  .panel {
+    padding: 80px 0;
+    border-radius: 28px 28px 0 0;
+    margin-top: -28px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .photo { width: min(280px, 80%); }
+
+  .job {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .ch, .lede, .actions, .photo {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .rv, .line > span {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bar" id="bar"></div>
+<div class="cur" id="cur"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">Neha Pawar</a>
+
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#journey">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+
+<section class="panel hero">
+  <div class="wrap hero-grid">
+
+    <div>
+      <h1 id="title" aria-label="Neha Pawar builds websites people enjoy">Neha Pawar builds <span class="hl">websites</span> people enjoy.</h1>
+
+      <p class="lede">
+        Web developer in Pune. I make responsive WordPress and HTML/CSS sites that feel clear and easy to use.
+      </p>
+
+      <div class="actions">
+        <a class="btn main" href="#work">See my work</a>
+        <a class="btn" href="#contact">Say hello</a>
+      </div>
+    </div>
+
+    <div class="photo">
+      <div class="arch">
+        <!-- Keep portfolioimg.jpeg in the same folder -->
+        <img id="pimg" src="portfolioimg.jpeg" alt="Portrait of Neha Pawar">
+      </div>
+      <span class="dot d1"></span>
+      <span class="dot d2"></span>
+      <span class="dot d3"></span>
+    </div>
+
+  </div>
+</section>
+
+<!-- MARQUEE -->
+
+<div class="marq" aria-hidden="true">
+  <div>
+    <span>WordPress</span>
+    <span>HTML5</span>
+    <span>CSS / SCSS</span>
+    <span>JavaScript</span>
+    <span>Responsive design</span>
+    <span>SEO</span>
+
+    <span>WordPress</span>
+    <span>HTML5</span>
+    <span>CSS / SCSS</span>
+    <span>JavaScript</span>
+    <span>Responsive design</span>
+    <span>SEO</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+
+<section class="panel p-sand about" id="about">
+  <div class="wrap-about">
+
+    <h2 class="rv">
+      <span class="line"><span>I turn ideas</span></span>
+      <span class="line"><span>into working</span></span>
+      <span class="line"><span>websites.</span></span>
+    </h2>
+
+    <p class="rv">
+      I'm looking for a role as a Web developer. My experience is in WordPress, HTML, CSS, SCSS and JavaScript, including theme customization, responsive layouts and performance work.
+      <br>A good site should feel simple and pleasant to use, on a phone as much as on a desktop. That's what I aim for in every build.
+    </p>
+
+    
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="panel p-indigo" id="skills">
+  <div class="wrap">
+
+    <h2 class="rv">What I work with</h2>
+
+    <div class="chips">
+      <span class="chip rv">HTML5</span>
+      <span class="chip rv" style="--d:.05s">CSS / SCSS</span>
+      <span class="chip rv" style="--d:.1s">JavaScript</span>
+      <span class="chip rv" style="--d:.15s">WordPress</span>
+      <span class="chip rv" style="--d:.2s">Responsive design</span>
+      <span class="chip rv" style="--d:.25s">SEO basics</span>
+      <span class="chip rv" style="--d:.3s">GitHub</span>
+      <span class="chip rv" style="--d:.35s">VS Code</span>
+      <span class="chip rv" style="--d:.4s">C / C++</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+
+
+<!-- EXPERIENCE -->
+
+<section class="panel p-dark" id="experience">
+  <div class="wrap">
+
+    <h2 class="rv">Where I've worked</h2>
+
+    <div class="job-grid">
+
+      <!-- WORK EXPERIENCE 01 -->
+
+      <article class="job-card rv">
+
+        <span class="job-label">Work Experience 01</span>
+
+        <time>March – September 2025</time>
+
+        <h3>Software Developer Intern</h3>
+
+        <p class="co">Drishti Technologies</p>
+
+        <ul>
+          <li>Built and maintained responsive, user-friendly websites using WordPress and HTML/CSS.</li>
+
+          <li>Worked with the team to improve website performance, user experience and SEO.</li>
+
+          <li>Contributed to company projects including Saptarshi Classes and WHMCSTech.</li>
+
+          <li>Created reusable base HTML/CSS templates for new websites.</li>
+        </ul>
+
+      </article>
+
+
+      <!-- WORK EXPERIENCE 02 -->
+
+      <article class="job-card rv" style="--d:.12s">
+
+        <span class="job-label">Work Experience 02</span>
+
+        <time>May – November 2026</time>
+
+        <h3>Web Developer Intern</h3>
+
+        <p class="co">White Warbler Communications</p>
+
+        <ul>
+          <li>Developed and updated responsive WordPress and Shopify website pages.</li>
+
+          <li>Worked on website layouts, UI improvements and responsive design.</li>
+
+          <li>Updated SEO-focused website content and developed service pages.</li>
+
+          <li>Worked with HTML, CSS, JavaScript and WordPress to build functional website experiences.</li>
+        </ul>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================
+     SELECTED WORK
+     STICKY PROJECT SHOWCASE
+========================================= -->
+
+<section class="sw-section" id="work">
+
+  <div class="wrap">
+
+    <div class="sw-heading">
+      <h2>Selected<br>Work<span style="color:var(--indigo)">.</span></h2>
+
+      <p class="sw-heading-note">
+        A few things I've built, designed and brought to life.
+        Scroll to explore ↓
+      </p>
+    </div>
+
+    <div class="sw-project-list">
+
+      <!-- PROJECT 01 -->
+
+      <article class="sw-project sw-p1" data-index="1">
+
+        <div class="sw-visual">
+          <img src="Fable and Figs_ Nature’s Finest Showcase.png"
+               alt="fable and figs"
+               loading="lazy">
+        </div>
+
+        <div class="sw-info">
+
+          <div class="sw-meta">
+            <span>Website Development</span>
+            <span class="sw-number">01 / 06</span>
+          </div>
+
+          <div>
+            <h3>Fable and Figs</h3>
+
+            <p class="sw-description">
+            Designed and developed a modern, user-friendly e-commerce website for Truecrop Foods using Shopify. Focused on creating an engaging shopping experience through clean layouts, intuitive navigation, appealing product displays, and responsive design while reflecting the brand's identity and making product discovery effortless.  
+            </p>
+
+            <div class="sw-tags">
+              <span>Shopify</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Liquid</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="sw-bottom">
+            <small>• Shopify Development • Responsive Design • E-commerce Experience</small>
+
+            <a class="sw-link"
+               href="https://truecropfoods.com/"
+               target="_blank"
+               rel="noopener"
+               aria-label="View Fable and Figs">↗</a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- PROJECT 02 -->
+
+      <article class="sw-project sw-p2" data-index="2">
+
+        <div class="sw-visual">
+          <img src="White Warbler Communications Showcase.png"
+               alt="White Warbler Communications"
+               loading="lazy">
+        </div>
+
+        <div class="sw-info">
+
+          <div class="sw-meta">
+            <span>Page development & updating SEO Content</span>
+            <span class="sw-number">02 / 06</span>
+          </div>
+
+          <div>
+            <h3>White Warbler Communications</h3>
+
+            <p class="sw-description">
+            Designed and developed a responsive, SEO-optimized WordPress website for White Warbler Communications, showcasing its services, creative process, and service-wise portfolio projects. Focused on intuitive navigation, clean UI, responsive layouts, and SEO-friendly content to create a professional digital presence. 
+            </p>
+
+            <div class="sw-tags">
+              <span>WordPress</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Custome Plugins</span>
+            </div>
+          </div>
+
+          <div class="sw-bottom">
+            <small>• WordPress Website Development •  SEO-Optimized Content Integration • Dynamic Service Pages • Responsive Desktop & Mobile Design</small>
+
+            <a class="sw-link"
+               href="https://www.whitewarbler.com/"
+               target="_blank"
+               rel="noopener"
+               aria-label="View whitewarbler">↗</a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- PROJECT 03 -->
+
+      <article class="sw-project sw-p3" data-index="3">
+
+        <div class="sw-visual">
+          <img src="Hitay Plant Protein Website Showcase.png"
+               alt="Hitay website preview"
+               loading="lazy">
+        </div>
+
+        <div class="sw-info">
+
+          <div class="sw-meta">
+            <span>WordPress Development</span>
+            <span class="sw-number">03 / 06</span>
+          </div>
+
+          <div>
+            <h3>Hitay Industries</h3>
+
+            <p class="sw-description">
+            Designed and developed a responsive WordPress website for Hitay Industries, showcasing its innovative plant-based protein solutions, product range, and food application categories. Focused on creating a clean, professional interface with structured product displays, intuitive navigation, and a seamless browsing experience across desktop and mobile devices. 
+            </p>
+
+            <div class="sw-tags">
+              <span>WordPress</span>
+              <span>PHP</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="sw-bottom">
+            <small>• WordPress Website Development •  SEO-Optimized Content Integration • Dynamic Service Pages • Responsive Desktop & Mobile Design</small>
+
+            <a class="sw-link"
+               href="https://hitayindustries.com/"
+               target="_blank"
+               rel="noopener"
+               aria-label="View Hitay Industries">↗</a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- PROJECT 04 -->
+
+      <article class="sw-project sw-p4" data-index="4">
+
+        <div class="sw-visual">
+          <img src="Pet-O-Full Brand Showcase.png"
+               alt="Pet-o-full website preview"
+               loading="lazy">
+        </div>
+
+        <div class="sw-info">
+
+          <div class="sw-meta">
+            <span>Website Development</span>
+            <span class="sw-number">04 / 06</span>
+          </div>
+
+          <div>
+            <h3>Pet-O-Full</h3>
+
+            <p class="sw-description">
+              Pet-O-Full is a modern pet food e-commerce website designed to provide healthy, nutritious and premium-quality food for dogs, puppies, cats and kittens. The website offers a user-friendly shopping experience with an attractive design, responsive layouts and easy product navigation.
+            </p>
+
+            <div class="sw-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Elementor</span>
+              <span>WordPressr</span>
+            </div>
+          </div>
+
+          <div class="sw-bottom">
+            <small>• WordPress Website Development • Designed a modern and visually appealing UI. • Maintained consistent branding, colors and typography. • Designed engaging homepage and informational sections.</small>
+
+            <a class="sw-link"
+               href="https://pet-o-full.in/"
+               aria-label="Pet-O-Full">↗</a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- PROJECT 05 -->
+
+      <article class="sw-project sw-p5" data-index="5">
+
+        <div class="sw-visual">
+          <img src="Jasper Switchgear_ Powering Safer Tomorrows.png"
+               alt="Jasper"
+               loading="lazy">
+        </div>
+
+        <div class="sw-info">
+
+          <div class="sw-meta">
+            <span>WordPress Development</span>
+            <span class="sw-number">05 / 06</span>
+          </div>
+
+          <div>
+            <h3>Jasper Switchgear</h3>
+
+            <p class="sw-description">
+            A modern, responsive industrial website developed for Jasper Switchgear Solutions, showcasing its electrical maintenance, testing, repair, retrofitting, and panel manufacturing services through a professional user-friendly interface.  
+            </p>
+
+            <div class="sw-tags">
+              <span>WordPress</span>
+              <span>Elementor</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="sw-bottom">
+            <small>• WordPress Website Development • Designed a modern and visually appealing UI. • Maintained consistent branding, colors and typography. • Designed engaging homepage and informational sections.</small>
+
+            <a class="sw-link"
+               href="https://indigo-wren-918157.hostingersite.com/"
+               aria-label="Jasper Switchgear">↗</a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- PROJECT 06 -->
+
+      <article class="sw-project sw-p6" data-index="6">
+
+        <div class="sw-visual">
+          <img src="Sips N Bites Healthy Oil Showcase.png"
+               alt="vandanaoil"
+               loading="lazy">
+        </div>
+
+        <div class="sw-info">
+
+          <div class="sw-meta">
+            <span>E-commerce Website Development</span>
+            <span class="sw-number">06 / 06</span>
+          </div>
+
+          <div>
+            <h3>Vandana Oils</h3>
+
+            <p class="sw-description">
+            Vandana Oil Mills is a WordPress-based e-commerce website designed to showcase and sell premium cold-pressed oils. The website offers a user-friendly shopping experience with responsive layouts, product categories, and easy navigation across desktop and mobile devices. 
+            </p>
+
+            <div class="sw-tags">
+              <span>WordPress</span>
+              <span>Elementor</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Responsive Design</span>
+            </div>
+          </div>
+
+          <div class="sw-bottom">
+            <small>• Responsive and mobile-friendly design • WooCommerce-based product listings • Shopping cart integration • WooCommerce-based product listings</small>
+
+            <a class="sw-link"
+               href="https://vandanaoilmills.com/"
+               aria-label="vandanaoilmills">↗</a>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section class="panel p-sand" id="journey">
+  <div class="wrap">
+
+    <h2 class="rv">Learning, growing, building.</h2>
+
+    <ol class="tl" id="tl">
+      <div class="fill" id="fill"></div>
+
+      <!-- <li class="rv">
+        <time>2017 – 2018</time>
+        <strong>Secondary school</strong>
+        <span>Dnyangangaa English Medium School, Pune. 87%</span>
+      </li>
+
+      <li class="rv">
+        <time>2019 – 2020</time>
+        <strong>Science (PCM)</strong>
+        <span>Abasaheb Garware College, Pune. 57.85%</span>
+      </li> -->
+
+      <li class="rv">
+        <time>2021 – 2024</time>
+        <strong>BSc Computer Science</strong>
+        <span>Sinhgad College of Science, Pune. CGPA 8.25</span>
+      </li>
+
+      <li class="rv">
+        <time>2024 – 2026</time>
+        <strong>MSc Computer Science</strong>
+        <span>Sinhgad College of Science, Pune. CGPA 8.32 </span>
+      </li>
+
+      <li class="rv">
+        <time>March 2025 – September 2025</time>
+        <strong>Software Developer Intern</strong>
+        <span>Drishti Technologies, Pashan, Pune</span>
+      </li>
+
+      <li class="rv">
+        <time>May 2026 – November 2026</time>
+        <strong>Web Developer Intern</strong>
+        <span>White Warbler Communications PVT. LTD, Camp, Pune</span>
+      </li>
+    </ol>
+
+  </div>
+</section>
+
+<!-- BEYOND -->
+
+<section class="panel p-dark" id="beyond">
+  <div class="wrap">
+
+    <h2 class="rv">Away from the screen</h2>
+
+    <div class="hob">
+
+      <div class="hobby rv">
+        <h3>Painting and art</h3>
+        <p>Turning blank spaces into bursts of colour.</p>
+      </div>
+
+      <div class="hobby rv" style="--d:.06s">
+        <h3>Crafts</h3>
+        <p>Trying new art forms to see what I can make.</p>
+      </div>
+
+      <div class="hobby rv" style="--d:.12s">
+        <h3>Movies</h3>
+        <p>Good stories and different worlds.</p>
+      </div>
+
+      <div class="hobby rv" style="--d:.18s">
+        <h3>Cooking</h3>
+        <p>Experimenting with flavours, one recipe at a time.</p>
+      </div>
+
+      <div class="hobby rv" style="--d:.24s">
+        <h3>Travelling</h3>
+        <p>New places, new perspectives.</p>
+      </div>
+
+      <div class="hobby rv" style="--d:.3s">
+        <h3>Music</h3>
+        <p>A playlist for every mood.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="panel contact" id="contact">
+  <div class="wrap">
+
+    <h2 class="rv">
+      Let's build <span class="o">something.</span>
+    </h2>
+
+    <p class="rv">
+      I'm open to software, web and WordPress development roles. Send me a message and I'll reply soon.
+    </p>
+
+    <div class="actions rv" style="opacity:1;animation:none">
+
+     <a class="btn main" href="mailto:pawarneha2202@gmail.com">
+    Email Me <i class="fas fa-envelope"></i>
+</a>
+
+      <a class="btn"
+         href="https://github.com/"
+         target="_blank"
+         rel="noopener">GitHub</a>
+
+      <a class="btn"
+         href="https://www.linkedin.com/in/neha-pawar-7396ba28a?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+         target="_blank"
+         rel="noopener">LinkedIn</a>
+
+    </div>
+
+    <footer>
+      <span>© 2026 Neha Dnyaneshwar Pawar</span>
+      <a>pawarneha2202@gmail.com</a>
+      <a href="#top">Back to top</a>
+    </footer>
+
+  </div>
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+<script>
+(function() {
+
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var bar = document.getElementById("bar");
+  var img = document.getElementById("pimg");
+  var tl = document.getElementById("tl");
+  var fill = document.getElementById("fill");
+
+  /* HERO HEADLINE: SPLIT INTO LETTERS */
+
+  var t = document.getElementById("title");
+  var i = 0;
+  var out = "";
+
+  t.childNodes.forEach(function(n) {
+
+    var hl = n.nodeType === 1;
+    var txt = n.textContent;
+
+    txt.split(/(\s+)/).forEach(function(w) {
+
+      if (!w) return;
+
+      if (/^\s+$/.test(w)) {
+        out += " ";
+        return;
+      }
+
+      out += '<span class="wd' + (hl ? ' hl' : '') + '" aria-hidden="true">' +
+        w.split("").map(function(c) {
+          return '<span class="ch" style="--i:' + (i++) + '">' + c + '</span>';
+        }).join("") +
+        '</span>';
+
+    });
+
+  });
+
+  t.innerHTML = out;
+
+  /* REVEAL ON SCROLL */
+
+  var io = new IntersectionObserver(function(es) {
+
+    es.forEach(function(e) {
+
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+
+    });
+
+  }, { threshold: .15 });
+
+  document.querySelectorAll(".rv").forEach(function(el) {
+    io.observe(el);
+  });
+
+  /* SCROLL-LINKED EFFECTS */
+
+  function onScroll() {
+
+    var h = document.documentElement.scrollHeight - innerHeight;
+
+    bar.style.width = (h > 0 ? scrollY / h * 100 : 0) + "%";
+
+    if (!reduce) {
+
+      img.style.transform =
+        "translateY(" + (-Math.min(scrollY, 600) * .06) + "px)";
+
+      var r = tl.getBoundingClientRect();
+
+      var p = Math.max(
+        0,
+        Math.min(1, (innerHeight * .65 - r.top) / r.height)
+      );
+
+      fill.style.height = "calc((100% - 16px) * " + p + ")";
+
+    } else {
+
+      fill.style.height = "calc(100% - 16px)";
+
+    }
+
+  }
+
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll);
+
+  onScroll();
+
+  /* SMOOTH SCROLLING */
+
+  if (window.Lenis && !reduce) {
+
+    var lenis = new Lenis({
+      duration: 1.15,
+      easing: function(x) {
+        return Math.min(1, 1.001 - Math.pow(2, -10 * x));
+      }
+    });
+
+    (function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    })(0);
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+
+      a.addEventListener("click", function(e) {
+
+        var id = a.getAttribute("href");
+
+        if (id.length > 1) {
+          e.preventDefault();
+          lenis.scrollTo(id, { offset: 0 });
+        }
+
+      });
+
+    });
+
+  }
+
+  /* CUSTOM CURSOR + MAGNETIC BUTTONS */
+
+  if (matchMedia("(hover:hover) and (pointer:fine)").matches && !reduce) {
+
+    var cur = document.getElementById("cur");
+
+    var x = 0, y = 0, cx = 0, cy = 0;
+
+    addEventListener("mousemove", function(e) {
+      x = e.clientX;
+      y = e.clientY;
+    });
+
+    (function loop() {
+
+      cx += (x - cx) * .2;
+      cy += (y - cy) * .2;
+
+      cur.style.transform =
+        "translate(" +
+        (cx - cur.offsetWidth / 2) + "px," +
+        (cy - cur.offsetHeight / 2) + "px)";
+
+      requestAnimationFrame(loop);
+
+    })();
+
+    document.querySelectorAll("a,.chip,.hobby").forEach(function(el) {
+
+      el.addEventListener("mouseenter", function() {
+        cur.classList.add("big");
+      });
+
+      el.addEventListener("mouseleave", function() {
+        cur.classList.remove("big");
+      });
+
+    });
+
+    document.querySelectorAll(".btn").forEach(function(b) {
+
+      b.addEventListener("mousemove", function(e) {
+
+        var r = b.getBoundingClientRect();
+
+        b.style.transform =
+          "translate(" +
+          (e.clientX - r.left - r.width / 2) * .25 + "px," +
+          (e.clientY - r.top - r.height / 2) * .35 + "px)";
+
+      });
+
+      b.addEventListener("mouseleave", function() {
+        b.style.transform = "";
+      });
+
+    });
+
+  }
+
+})();
+</script>
+
+</body>
+</html>
